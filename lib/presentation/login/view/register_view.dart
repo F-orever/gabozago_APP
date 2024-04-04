@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gabozago/app/config/routes/route_path.dart';
+import 'package:gabozago/app/enums/term_type.dart';
 
 import 'package:gabozago/presentation/common_widget/gabozago_appbar.dart';
 import 'package:gabozago/presentation/common_widget/gabozago_button.dart';
 import 'package:gabozago/presentation/common_widget/gabozago_text_field.dart';
+import 'package:get/get.dart';
 
 import '../widget/register_checkbox.dart';
 import '../widget/register_container.dart';
@@ -107,7 +110,7 @@ class RegisterView extends StatelessWidget {
               RegisterCheckBox(
                 value: true,
                 onChanged: (value) {},
-                onTap: () {},
+                onTap: () => Get.toNamed(RoutePath.term, arguments: TermType.termOfUse),
                 text: "서비스 이용약관 동의",
                 subText: "(필수)",
                 hasUnderline: true,
@@ -116,7 +119,7 @@ class RegisterView extends StatelessWidget {
               RegisterCheckBox(
                 value: true,
                 onChanged: (value) {},
-                onTap: () {},
+                onTap: () => Get.toNamed(RoutePath.term, arguments: TermType.privacyPolicy),
                 text: "개인정보 수집 및 이용 동의",
                 subText: "(필수)",
                 hasUnderline: true,
@@ -125,7 +128,7 @@ class RegisterView extends StatelessWidget {
               RegisterCheckBox(
                 value: true,
                 onChanged: (value) {},
-                onTap: () {},
+                onTap: () => Get.toNamed(RoutePath.term, arguments: TermType.locationService),
                 text: "위치서비스 이용 동의",
                 subText: "(선택)",
                 isRequired: false,
