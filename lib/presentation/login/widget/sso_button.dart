@@ -7,11 +7,13 @@ class SSOLoginButton extends StatelessWidget {
     super.key,
     required this.iconPath,
     required this.backgroundColor,
+    this.iconSize = 26,
     this.textColor = Colors.black,
     this.onTap,
   });
 
   final String text;
+  final double iconSize;
   final String iconPath;
   final Color backgroundColor;
   final Color textColor;
@@ -31,7 +33,7 @@ class SSOLoginButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Center(child: Image.asset(iconPath, width: 26.w, height: 26.w)),
+            Center(child: Image.asset(iconPath, width: iconSize, height: iconSize)),
             SizedBox(width: 4.w),
             Text(text, style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500, color: textColor, height: 1.3)),
           ],
