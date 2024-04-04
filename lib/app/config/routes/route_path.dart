@@ -1,4 +1,5 @@
 class RoutePath {
-  // Login
+  // Authentication
   static const String login = '/login';
+  static const String register = '/register';
 }

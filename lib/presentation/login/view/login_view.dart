@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:gabozago/app/config/routes/route_path.dart';
+import 'package:get/get.dart';
 
 import '../widget/sso_button.dart';
 
@@ -51,7 +53,7 @@ class LoginView extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 25.5.w),
           child: SSOLoginButton(
             "카카오톡으로 시작하기",
-            onTap: () {},
+            onTap: () => Get.toNamed(RoutePath.register),
             iconPath: "assets/logo/kakaotalk.png",
             backgroundColor: const Color(0xFFFFE812),
           ),
