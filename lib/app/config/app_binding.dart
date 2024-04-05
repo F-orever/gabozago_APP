@@ -1,3 +1,4 @@
+import 'package:gabozago/app/service/auth_service.dart';
 import 'package:get/get.dart';
 
 class AppBinding extends Bindings {
@@ -13,7 +14,9 @@ class AppBinding extends Bindings {
 
   void injectRepositories() {}
 
-  void injectServices() {}
+  void injectServices() {
+    Get.put(AuthService());
+  }
 
   void injectUseCases() {}
 }
