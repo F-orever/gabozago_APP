@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:gabozago/app/config/routes/route_path.dart';
 import 'package:gabozago/app/enums/oauth_type.dart';
 import 'package:get/get.dart';
 
@@ -59,7 +58,7 @@ class LoginView extends StatelessWidget {
           Image.asset('assets/noti/quick_start_noti.png', width: 183.w, height: 59.w, fit: BoxFit.cover),
           SSOLoginButton(
             "카카오톡으로 시작하기",
-            onTap: () => Get.toNamed(RoutePath.register),
+            onTap: () async => await vm.login(OAuthType.kakao),
             iconPath: "assets/logo/kakaotalk.png",
             backgroundColor: const Color(0xFFFFE812),
           ),
@@ -90,13 +89,17 @@ class LoginView extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SSOLoginCircleButton(backgroundColor: const Color(0xFF00BF18), iconPath: "assets/logo/naver.png", onTap: () {}),
+              SSOLoginCircleButton(
+                backgroundColor: const Color(0xFF00BF18),
+                iconPath: "assets/logo/naver.png",
+                onTap: () async => await vm.login(OAuthType.naver),
+              ),
               SizedBox(width: 15.w),
               SSOLoginCircleButton(
                 borderColor: const Color(0xFFEDEDED),
                 backgroundColor: const Color(0xFFFFFFFF),
                 iconPath: "assets/logo/google.png",
-                onTap: () {},
+                onTap: () async => await vm.login(OAuthType.google),
               ),
             ],
           ),
