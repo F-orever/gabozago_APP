@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 import 'package:gabozago/domain/entities/base_user.dart';
@@ -20,6 +21,7 @@ class AuthService extends GetxService {
       } else if (oAuthType == OAuthType.google) {
         user = await _loginWithGoogle();
       } else if (oAuthType == OAuthType.kakao) {
+        user = await _loginWithKakao();
       } else if (oAuthType == OAuthType.naver) {}
     } catch (e) {
       if (kDebugMode) print(e);
@@ -60,4 +62,26 @@ Future<BaseUser?> _loginWithGoogle() async {
     rethrow;
   }
   return null;
+}
+
+Future<BaseUser?> _loginWithKakao() async {
+  User user;
+
+  try {
+    if (await isKakaoTalkInstalled()) {
+      await UserApi.instance.loginWithKakaoTalk();
+    } else {
+      await UserApi.instance.loginWithKakaoAccount();
+    }
+
+    user = await UserApi.instance.me();
+
+    return BaseUser(
+      provider: OAuthType.kakao,
+      oauthId: user.id.toString(),
+      email: user.kakaoAccount!.email!,
+    );
+  } catch (e) {
+    rethrow;
+  }
 }

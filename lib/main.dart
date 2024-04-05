@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gabozago/app/config/app_binding.dart';
 import 'package:gabozago/app/config/app_theme.dart';
 import 'package:gabozago/app/config/routes/route_path.dart';
 import 'package:gabozago/app/config/routes/routes.dart';
 import 'package:get/route_manager.dart';
+import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart';
 
-void main() {
+void main() async {
+  // Ensure that the WidgetsBinding has been initialized
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Load .env file
+  await dotenv.load(fileName: ".env");
+
+  // Initialize Kakao SDK
+  KakaoSdk.init(nativeAppKey: dotenv.env['KAKAO_NATIVE_APP_KEY']!);
+
   runApp(const MainApp());
 }
 
