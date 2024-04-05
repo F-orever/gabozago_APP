@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "65833165096",
+    "project_id": "gabozago-9475f",
+    "storage_bucket": "gabozago-9475f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65833165096:android:645b45bc187191c3e0b01d",
+        "android_client_info": {
+          "package_name": "com.fore.gabozago"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65833165096-7cg7c0i90258s0k6jvsaf6mg2te32e74.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdWyzXIGnltwgnBPhbo6MHMmieDB0vU6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "65833165096-7cg7c0i90258s0k6jvsaf6mg2te32e74.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "65833165096-r2fcrjh40punkfv6t5a0t4qth8b8ast5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.fore.gabozago"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
