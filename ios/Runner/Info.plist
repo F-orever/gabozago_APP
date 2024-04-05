@@ -32,6 +32,23 @@
 		<true/>
 		<key>NSAllowsArbitraryLoadsInWebContent</key>
 		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>naver.com</key>
+			<dict>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+			<key>naver.net</key>
+			<dict>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
 	</dict>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
@@ -51,6 +68,8 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.65833165096-r2fcrjh40punkfv6t5a0t4qth8b8ast5</string>
+				<string>kakaocc6adc26d51f91a26a59375ba87cc659</string>
+				<string>gabozagoLogin</string>
 			</array>
 		</dict>
 	</array>
@@ -58,17 +77,16 @@
 	<array>
 		<string>kakaokompassauth</string>
 		<string>kakaolink</string>
+		<string>naversearchapp</string>
+		<string>naversearchthirdlogin</string>
 	</array>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>kakaocc6adc26d51f91a26a59375ba87cc659</string>
-			</array>
-		</dict>
-	</array>
+	<key>naverConsumerKey</key>
+	<string>1BXhVPT9VQ24QspNqBiv</string>
+	<key>naverConsumerSecret</key>
+	<string>gCjEjJWP9E</string>
+	<key>naverServiceAppName</key>
+	<string>가보자고</string>
+	<key>naverServiceAppUrlScheme</key>
+	<string>gabozagoLogin</string>
 </dict>
 </plist>
