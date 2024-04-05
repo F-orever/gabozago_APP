@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gabozago/app/config/routes/route_path.dart';
+import 'package:gabozago/app/enums/oauth_type.dart';
 import 'package:get/get.dart';
 
+import '../view_model/login_view_model.dart';
 import '../widget/sso_button.dart';
 
 class LoginView extends StatelessWidget {
@@ -48,6 +50,8 @@ class LoginView extends StatelessWidget {
   }
 
   Widget _buildLoginBody() {
+    final LoginViewModel vm = Get.find<LoginViewModel>();
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 25.5.w),
       child: Column(
@@ -63,7 +67,7 @@ class LoginView extends StatelessWidget {
             SizedBox(height: 7.h),
             SSOLoginButton(
               "Apple로 시작하기",
-              onTap: () => Get.toNamed(RoutePath.register),
+              onTap: () async => await vm.login(OAuthType.apple),
               iconPath: "assets/logo/apple.png",
               iconSize: 26.w,
               backgroundColor: Colors.black,
