@@ -3,17 +3,19 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:gabozago/app/enums/oauth_type.dart';
 import 'package:get/get.dart';
+
+import 'package:gabozago/app/base/base_view.dart';
+import 'package:gabozago/app/enums/oauth_type.dart';
 
 import '../view_model/login_view_model.dart';
 import '../widget/sso_button.dart';
 
-class LoginView extends StatelessWidget {
+class LoginView extends BaseView<LoginViewModel> {
   const LoginView({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget buildView(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Center(
