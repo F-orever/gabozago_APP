@@ -29,16 +29,15 @@ abstract class BaseView<T extends BaseViewModel> extends GetView<T> {
 
 Future<void> _handleUiEvent(BuildContext context, BaseUiEvent event) async {
   if (event is OnDialog) {
-    await showDialog(context: context, builder: (_) => event.dialog);
+    await Get.dialog(event.dialog);
   } else if (event is CloseDialog) {
     if (Get.isDialogOpen!) Get.back();
   } else if (event is ShowToast) {
     await Fluttertoast.showToast(msg: event.message);
   } else if (event is ShowProgressIndicator) {
-    await showDialog(
-      context: context,
+    Get.dialog(
+      const Center(child: CircularProgressIndicator()),
       barrierDismissible: false,
-      builder: (_) => const Center(child: CircularProgressIndicator()),
     );
   }
 }
