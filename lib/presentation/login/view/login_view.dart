@@ -60,7 +60,7 @@ class LoginView extends BaseView<LoginViewModel> {
           Image.asset('assets/noti/quick_start_noti.png', width: 183.w, height: 59.w, fit: BoxFit.cover),
           SSOLoginButton(
             "카카오톡으로 시작하기",
-            onTap: () async => await vm.login(OAuthType.kakao),
+            onTap: () async => await vm.login(OAuthProvider.kakao),
             iconPath: "assets/logo/kakaotalk.png",
             backgroundColor: const Color(0xFFFFE812),
           ),
@@ -68,7 +68,7 @@ class LoginView extends BaseView<LoginViewModel> {
             SizedBox(height: 7.h),
             SSOLoginButton(
               "Apple로 시작하기",
-              onTap: () async => await vm.login(OAuthType.apple),
+              onTap: () async => await vm.login(OAuthProvider.apple),
               iconPath: "assets/logo/apple.png",
               iconSize: 26.w,
               backgroundColor: Colors.black,
@@ -94,14 +94,14 @@ class LoginView extends BaseView<LoginViewModel> {
               SSOLoginCircleButton(
                 backgroundColor: const Color(0xFF00BF18),
                 iconPath: "assets/logo/naver.png",
-                onTap: () async => await vm.login(OAuthType.naver),
+                onTap: () async => await vm.login(OAuthProvider.naver),
               ),
               SizedBox(width: 15.w),
               SSOLoginCircleButton(
                 borderColor: const Color(0xFFEDEDED),
                 backgroundColor: const Color(0xFFFFFFFF),
                 iconPath: "assets/logo/google.png",
-                onTap: () async => await vm.login(OAuthType.google),
+                onTap: () async => await vm.login(OAuthProvider.google),
               ),
             ],
           ),
