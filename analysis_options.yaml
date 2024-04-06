@@ -2,6 +2,7 @@ include: package:flutter_lints/flutter.yaml
 
 analyzer:
   exclude:
+    - "**.auto_mappr.dart"
     - "**.freezed.dart"
     - "**.g.dart"
     - "**/generated_plugin_registrant.dart"
