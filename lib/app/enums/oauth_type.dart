@@ -1,1 +1,1 @@
-enum OAuthType { apple, google, kakao, naver }
+enum OAuthProvider { apple, google, kakao, naver }
