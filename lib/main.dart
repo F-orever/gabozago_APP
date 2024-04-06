@@ -37,7 +37,7 @@ class MainApp extends StatelessWidget {
             return MediaQuery(data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)), child: child!);
           },
           initialBinding: AppBinding(),
-          initialRoute: RoutePath.login,
+          initialRoute: RoutePath.main,
           getPages: Routes.getPages,
         );
       },

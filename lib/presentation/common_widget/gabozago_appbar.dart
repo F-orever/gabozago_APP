@@ -14,10 +14,8 @@ class GabozagoAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       automaticallyImplyLeading: false,
       toolbarHeight: 35.h,
-      backgroundColor: Colors.white,
-      elevation: 0,
-      scrolledUnderElevation: 0,
-      title: Text(title, style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w700, color: const Color(0xFF333333), height: 1.375)),
+      title: Text(title),
+      titleTextStyle: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w700, color: const Color(0xFF333333), height: 1.375),
       centerTitle: true,
       leadingWidth: 44.w,
       leading: hasBack
