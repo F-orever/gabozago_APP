@@ -39,7 +39,12 @@ class RegisterView extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: const GabozagoCTAButton("회원가입 완료"),
+      bottomNavigationBar: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 19.h),
+          child: const GabozagoCTAButton("회원가입 완료"),
+        ),
+      ),
     );
   }
 
